@@ -1,0 +1,112 @@
+@media (max-width: 75em) {
+  html {
+    font-size: 56.25%;
+  }
+  .container {
+    max-width: 100rem;
+    padding: 0 2.4rem;
+  }
+  .heading-primary {
+    font-size: 9.8rem;
+    font-weight: 700;
+  }
+  .contact-mail:link,
+  .contact-mail:visited {
+    font-size: 2.4rem;
+  }
+  .contact-heading {
+    font-size: 6.2rem;
+  }
+}
+@media (max-width: 48.875rem) {
+  html {
+    font-size: 50%;
+  }
+  .project {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .hero-text-box {
+    width: 100%;
+  }
+  .about-text {
+    font-size: 3rem;
+    margin-bottom: 2.4rem;
+  }
+  .main-nav {
+    background-color: var(--primary-color-light-10);
+    transform: translateX(100%);
+    transition: all 0.5s cubic-bezier(0.17, 0.67, 0.61, 1.46);
+    /* 1) Hide it visually */
+    opacity: 0;
+
+    /* 2) Make it unaccessible to mouse and keyboard */
+    pointer-events: none;
+
+    /* 3) Hide it from screen readers */
+    visibility: hidden;
+  }
+  .btn--open {
+    display: flex;
+  }
+  .nav-open .main-nav {
+    z-index: 999;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+    transform: translateX(0);
+  }
+  .nav-open .main-nav-list {
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .nav-open .btn--close {
+    display: flex;
+    z-index: 9999;
+  }
+  .nav-open .btn--open {
+    display: none;
+  }
+}
+
+@media (max-width: 31.25em) {
+  html {
+    font-size: 37.5%;
+  }
+  .section-hero {
+    height: calc(70vh - 8rem);
+  }
+  .hero-text {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .more-info {
+    gap: 8rem;
+    flex-direction: column;
+  }
+  .skills {
+    margin: 0 auto;
+    width: 80%;
+  }
+
+
+  
+}
+
+@media (max-width: 20em) {
+  .project {
+    grid-template-columns: 1fr;
+    padding: 0 5.6rem;
+  }
+}
