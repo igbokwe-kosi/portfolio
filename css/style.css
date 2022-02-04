@@ -605,8 +605,7 @@ body {
  }
 
  .btn-icon--social {
-  width: 12px;
-  height: 12px;
+  font-size: 2.4rem;
   /* background-color: var(--primary-color-light-10); */
   color: var(--primary-color-light-10);
 }
