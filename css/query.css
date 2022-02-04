@@ -117,3 +117,9 @@
   }
   
 }
+
+@media (max-height: 35rem) {
+  .next-page{
+    display: none;
+  } 
+}

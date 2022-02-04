@@ -27,6 +27,7 @@ const allLinks = document.querySelectorAll("a:link");
 allLinks.forEach(function (link) {
   link.addEventListener("click", function (e) {
     e.preventDefault();
+    headerEL.classList.remove("nav-open");
     const href = link.getAttribute("href");
 
     // Scroll back to top
@@ -41,6 +42,8 @@ allLinks.forEach(function (link) {
       const sectionEl = document.querySelector(href);
       sectionEl.scrollIntoView({ behavior: "smooth" });
     }
+
+
   });
 });
 
