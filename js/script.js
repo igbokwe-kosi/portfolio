@@ -2,6 +2,10 @@ const headerEL = document.querySelector(".header");
 const btnOpenEL = document.querySelector(".btn--open");
 const btnCloseEL = document.querySelector(".btn--close");
 
+window.addEventListener('load', ()=>{
+  alert('Website still in the works but you can check it out though!')
+})
+
 btnOpenEL.addEventListener("click", function () {
   headerEL.classList.add("nav-open");
 });
