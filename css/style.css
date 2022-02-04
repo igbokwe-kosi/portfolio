@@ -43,8 +43,7 @@ Default:
 2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
 */
 :root {
-  /* --primary-color: #0652dd; */
-  --primary-color: #f06;
+  --primary-color: #0652dd;
   --primary-color-light-10: #eef3fd;
   --primary-color-light-20: #e6eefc;
   --primary-color-light-30: #cddcf8;
