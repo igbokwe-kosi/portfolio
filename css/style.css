@@ -66,6 +66,7 @@ html {
 body {
   /* scroll-behavior: smooth; */
   /* font-family: sans-serif; */
+  overflow-x: hidden;
   font-family: "Open Sans", sans-serif;
   /* font-family: "Rubik", sans-serif; */
   line-height: 1;
@@ -111,10 +112,10 @@ body {
   border: none;
   /* display: none; */
   background-color: var(--primary-color-dark-10);
-  height: 5.6rem;
-  width: 5.6rem;
+  height: 5.2rem;
+  width: 5.2rem;
   border-radius: 50%;
-  /* display: flex; */
+  display: flex;
   align-items: center;
   justify-content: center;
   display: none;
@@ -273,6 +274,13 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 3.2rem;
+
+  /* display: flex;
+  gap: 3.2rem; */
+  /* flex-wrap: wrap; */
+  /* width: 100%; */
+  /* flex: 0 1 30%; */
+  /* flex-wrap: wrap; */
 }
 .project-img {
   width: 100%;
@@ -290,6 +298,7 @@ body {
 
 .project-text-box {
   margin-left: 1rem;
+  width: 100%;
   display: flex;
   align-items: flex-start;
   flex-direction: column;
@@ -298,6 +307,7 @@ body {
 .project-text {
   font-size: 1.8rem;
   line-height: 1.8;
+  width: 70%;
   margin-bottom: 1.8rem;
 }
 
