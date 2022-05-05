@@ -28,14 +28,16 @@
     font-size: 50%;
   }
 
-  
- 
   .hero-text-box {
     width: 100%;
   }
   .about-text {
     font-size: 3rem;
     margin-bottom: 2.4rem;
+  }
+
+  .btn--toggle {
+    display: flex;
   }
   .main-nav {
     overflow-y: hidden !important;
@@ -53,15 +55,10 @@
 
     display: none;
   }
-  .btn--open{
-    display: block;
-  }
-  .btn--close{
-    display: none;
-  }
+
   .nav-open .main-nav {
-    z-index: 999;
-    position: absolute;
+    z-index: 9;
+    position: fixed;
     top: 0;
     left: 0;
     height: 100vh;
@@ -81,13 +78,6 @@
     justify-content: center;
     flex-direction: column;
   }
-  .nav-open .btn--close {
-    display: flex;
-    z-index: 9999;
-  }
-  /* .nav-open .btn--open {
-    display: none;
-  } */
 }
 
 @media (max-width: 34.375em) {
@@ -115,9 +105,7 @@
     grid-template-columns: 1fr;
     padding: 0 5.6rem;
   }
-  .next-page{
+  .next-page {
     display: none;
-  } 
-  
+  }
 }
-

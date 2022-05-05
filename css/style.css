@@ -6,7 +6,7 @@
 
 - Font weights
 Default: 400
-Medium: 500
+Medium: 400
 Semi-bold: 600
 Bold: 700
 
@@ -60,33 +60,29 @@ Default:
 html {
   overflow-x: hidden;
   font-size: 62.5%;
-  /* scroll-behavior: smooth !important; */
 }
 
 body {
-  /* scroll-behavior: smooth; */
-  /* font-family: sans-serif; */
   overflow-x: hidden;
-  font-family: "Open Sans", sans-serif;
-  /* font-family: "Rubik", sans-serif; */
+  font-family: 'Open Sans', sans-serif;
   line-height: 1;
   background-color: var(--primary-color-light-20);
   font-weight: 400;
   color: var(--primary-color-dark-10);
 }
-.link:link,
-.link:visited {
+.link:is(:link, :visited) {
   text-decoration: none;
   color: var(--primary-color-dark-10);
   transition: all 0.3s;
 }
-.link:hover,
-.link:active {
+.link:is(:hover, :active, :focus) {
   color: var(--primary-color);
 }
 .container {
   margin: 0 auto;
-  max-width: 120rem;
+  max-width: 144rem;
+  width: 90%;
+  padding: 1rem;
 }
 .heading-primary {
   font-size: 12.8rem;
@@ -103,7 +99,6 @@ body {
 .heading-secondary,
 .heading-tertiary {
   display: inline-block;
-  /* text-decoration: underline; */
   text-transform: uppercase;
   font-weight: 400;
   letter-spacing: 2px;
@@ -153,7 +148,7 @@ body {
 .main-nav-link:visited {
   text-transform: uppercase;
   letter-spacing: 2px;
-  font-weight: 500;
+  font-weight: 400;
 }
 /* ------------------------------------SOCIAL MEDIA ICON SECTION------------------------------------ */
 /* .socials {
@@ -191,7 +186,7 @@ body {
 
 .section-hero {
   position: relative;
-  height: calc(100vh - 8rem);
+  min-height: calc(100vh - 8rem);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -305,16 +300,15 @@ body {
 }
 
 .project-text {
-  font-size: 1.8rem;
+  font-size: 1.2rem;
   line-height: 1.8;
-  width: 70%;
   margin-bottom: 1.8rem;
 }
 
 .project-link:link,
 .project-link:visited {
   font-family: inherit;
-  font-weight: 500;
+  font-weight: 400;
   font-size: 2rem;
   text-align: center;
   align-self: stretch;
@@ -460,37 +454,37 @@ body {
 .project-link-btn {
   border: none;
   background: none;
- }
- 
- .project-link-btn span {
-  padding-bottom: .7rem;
-  letter-spacing: .4rem;
+}
+
+.project-link-btn span {
+  padding-bottom: 0.7rem;
+  letter-spacing: 0.4rem;
   font-size: 1.5rem;
   padding-right: 1.5rem;
   text-transform: uppercase;
- }
- 
- .project-link-btn svg {
+}
+
+.project-link-btn svg {
   transform: translateX(-8px);
   transition: all 0.3s ease;
- }
- 
- .project-link-btn:hover svg {
+}
+
+.project-link-btn:hover svg {
   transform: translateX(0);
- }
- 
- .project-link-btn:active svg {
+}
+
+.project-link-btn:active svg {
   transform: scale(0.9);
- }
- 
- .hover-underline-animation {
+}
+
+.hover-underline-animation {
   position: relative;
   color: var(--primary-color-dark-10);
   padding-bottom: 20px;
- }
- 
- .hover-underline-animation:after {
-  content: "";
+}
+
+.hover-underline-animation:after {
+  content: '';
   position: absolute;
   width: 100%;
   transform: scaleX(0);
@@ -500,21 +494,17 @@ body {
   background-color: var(--primary-color-dark-10);
   transform-origin: bottom right;
   transition: transform 0.25s ease-out;
- }
- 
- .project-link-btn:hover .hover-underline-animation:after {
+}
+
+.project-link-btn:hover .hover-underline-animation:after {
   transform: scaleX(1);
   transform-origin: bottom left;
- }
+}
 
-
- 
 .btn--social {
-
   position: relative;
   padding: 1.6rem 3.2rem;
   font-family: inherit;
-  font-weight: 500;
   font-size: 1.6rem;
   line-height: 1;
   text-transform: uppercase;
@@ -527,11 +517,11 @@ body {
   cursor: pointer;
   filter: drop-shadow(0 0.2rem 0.8rem rgba(39, 94, 254, 0.32));
   transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
- }
- 
- .btn--social::before {
+}
+
+.btn--social::before {
   position: absolute;
-  content: "";
+  content: '';
   top: 0;
   left: 0;
   z-index: -1;
@@ -539,30 +529,29 @@ body {
   height: 100%;
   background: var(--primary-color);
   transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
- }
- 
- .btn--social span,
- .btn--social span span {
+}
+
+.btn--social span,
+.btn--social span span {
   display: inline-flex;
   vertical-align: middle;
   transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
 
- }
- 
- .btn--social span {
+.btn--social span {
   transition-delay: 0.05s;
- }
- 
- .btn--social span:first-child {
-  padding-right: .7rem;
- }
- 
- .btn--social span span {
-  margin-left: .8rem;
+}
+
+.btn--social span:first-child {
+  padding-right: 0.7rem;
+}
+
+.btn--social span span {
+  margin-left: 0.8rem;
   transition-delay: 0.1s;
- }
- 
- .btn--social ul {
+}
+
+.btn--social ul {
   position: absolute;
   top: 50%;
   left: 0;
@@ -572,50 +561,116 @@ body {
   padding: 0;
   list-style-type: none;
   transform: translateY(-50%);
- }
- 
- .btn--social ul li {
-  flex: 1;
- }
- 
- .btn--social ul li a {
-  display: inline-flex;
-  vertical-align: middle;
-  transform: translateY(55px);
-  transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
- }
- 
- .btn--social ul li a:hover {
-  opacity: 0.5;
- }
- 
- .btn--social:hover::before {
-  transform: scale(1.2);
- }
- 
- .btn--social:hover span,
- .btn--social:hover span span {
-  transform: translateY(-5.5rem);
- }
- 
- .btn--social:hover ul li a {
-  transform: translateY(0);
- }
- 
- .btn--social:hover ul li:nth-child(1) a {
-  transition-delay: 0.15s;
- }
- 
- .btn--social:hover ul li:nth-child(2) a {
-  transition-delay: 0.2s;
- }
- 
- .btn--social:hover ul li:nth-child(3) a {
-  transition-delay: 0.25s;
- }
+  height: 100%;
+}
 
- .btn-icon--social {
+.btn--social ul li {
+  flex: 1;
+  height: 100%;
+}
+
+.btn--social ul li a {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(55px);
+  transition: 0.3s cubic-bezier(0.215, 1.61, 0.355, 1);
+}
+
+.btn--social ul li a:hover {
+  opacity: 0.5;
+}
+
+.btn--social:hover::before {
+  transform: scale(1.2);
+}
+
+.btn--social:hover span,
+.btn--social:focus span {
+  transform: translateY(-5.5rem);
+}
+
+.btn--social:is(:hover, :focus) .btn--social__link {
+  transform: translateY(0);
+}
+
+.btn--social:hover ul li:nth-child(1) a,
+.btn--social:focus ul li:nth-child(1) a {
+  transition-delay: 0.15s;
+}
+
+.btn--social:hover ul li:nth-child(2) a,
+.btn--social:focus ul li:nth-child(2) a {
+  transition-delay: 0.2s;
+}
+
+.btn--social:hover ul li:nth-child(3) a,
+.btn--social:focus ul li:nth-child(3) a {
+  transition-delay: 0.25s;
+}
+
+.btn-icon--social {
   font-size: 2.4rem;
-  /* background-color: var(--primary-color-light-10); */
   color: var(--primary-color-light-10);
+}
+
+.btn--social__link:focus {
+  outline: none;
+  display: none;
+}
+
+/* ------------------------------------btn toggle------------------------------------ */
+
+.btn--toggle {
+  z-index: 10;
+  width: 30px;
+  height: 20px;
+
+  /* display: flex; */
+  flex-direction: column;
+  align-items: center;
+
+  justify-content: space-between;
+
+  background: none;
+  color: inherit;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+
+  position: relative;
+  display: none;
+}
+.btn--toggle:focus {
+  outline: none;
+  transform: scale(1.2);
+}
+
+.btn--toggle__line {
+  width: 100%;
+  border-radius: 50px;
+  height: 4px;
+  background-color: #000;
+
+  transition: all 300ms cubic-bezier(0, 0.99, 0, 1.7);
+}
+.btn--toggle:hover .btn--toggle__line:nth-child(odd) {
+  width: 120%;
+}
+.btn--toggle:hover .btn--toggle__line:nth-child(even) {
+  width: 60%;
+}
+
+.btn--toggle.btn--close .btn--toggle__line:nth-child(1) {
+  transform: rotate(-45deg) translateY(11px);
+}
+.btn--toggle.btn--close .btn--toggle__line:nth-child(2) {
+  opacity: 0;
+  visibility: hidden;
+}
+.btn--toggle.btn--close .btn--toggle__line:nth-child(3) {
+  transform: rotate(45deg) translateY(-11px);
 }

@@ -13,7 +13,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/style.css" />
@@ -30,9 +30,7 @@
     <script src="js/script.js" defer></script>
   </head>
   <body>
-    <div class="message">
-      
-    </div>
+    <div class="message"></div>
     <header class="header">
       <div class="header-logo">KI</div>
       <nav class="main-nav">
@@ -46,42 +44,68 @@
           <li class="main-nav-item">
             <a href="#contact" class="main-nav-link link">Contact</a>
           </li>
+
           <li class="main-nav-item">
             <button class="btn--social">
               <span>Socials</span>
               <span>
-                <ion-icon class="btn-icon--social" name="share-social-outline"></ion-icon>
+                <ion-icon
+                  class="btn-icon--social"
+                  name="share-social-outline"
+                ></ion-icon>
               </span>
               <ul>
                 <li>
-                  <a href="https://instagram.com/igbokwe_kosi">
-                    <ion-icon class="btn-icon--social" name="logo-instagram"></ion-icon>
+                  <a
+                    href="https://instagram.com/igbokwe_kosi"
+                    class="btn--social__link"
+                  >
+                    <ion-icon
+                      class="btn-icon--social"
+                      name="logo-instagram"
+                    ></ion-icon>
                   </a>
                 </li>
                 <li>
-                  <a href="https://twitter.com/igbokwe_kosiso">
-                    <ion-icon class="btn-icon--social" name="logo-twitter"></ion-icon>
+                  <a
+                    href="https://twitter.com/igbokwe_kosiso"
+                    class="btn--social__link"
+                  >
+                    <ion-icon
+                      class="btn-icon--social"
+                      name="logo-twitter"
+                    ></ion-icon>
                   </a>
                 </li>
                 <li>
-                  <a href="https://github.com/igbokwe-kosi">
-                    <ion-icon class="btn-icon--social" name="logo-github"></ion-icon>
+                  <a
+                    href="https://github.com/igbokwe-kosi"
+                    class="btn--social__link"
+                  >
+                    <ion-icon
+                      class="btn-icon--social"
+                      name="logo-github"
+                    ></ion-icon>
                   </a>
                 </li>
               </ul>
             </button>
           </li>
-         
-
         </ul>
       </nav>
-      <button class="btn btn--open">
-        <ion-icon class="btn-icon" name="reorder-two-outline"></ion-icon>
-      </button>
 
-      <button class="btn btn--close">
-        <ion-icon class="btn-icon" name="close-outline"></ion-icon>
+      <button class="btn--toggle">
+        <span class="btn--toggle__line"></span>
+        <span class="btn--toggle__line"></span>
+        <span class="btn--toggle__line"></span>
       </button>
+      <!-- <button class="btn btn--open"> -->
+      <!-- <ion-icon class="btn-icon" name="reorder-two-outline"></ion-icon> -->
+      <!-- </button> -->
+      <!--  -->
+      <!-- <button class="btn btn--close"> -->
+      <!-- <ion-icon class="btn-icon" name="close-outline"></ion-icon> -->
+      <!-- </button> -->
     </header>
     <section class="section-hero container">
       <!-- <div class="socials">
@@ -150,13 +174,12 @@
                   <div class="language">CSS</div>
                   <div class="percent">80%</div>
                 </li>
-                <li class="skill-item ">
+                <li class="skill-item">
                   <div class="language">Javascript</div>
                   <div class="percent">100%</div>
                 </li>
-                <li class="skill-item ">
+                <li class="skill-item">
                   <div class="language">More to come!</div>
-                  
                 </li>
               </ul>
             </div>
@@ -167,7 +190,6 @@
         <div class="container">
           <h2 class="heading-secondary">Latest passion projects</h2>
           <div class="project">
-          
             <div class="project-box">
               <div class="project-img-box">
                 <img
@@ -182,9 +204,22 @@
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                 </p>
                 <a class="project-link-btn">
-                  <span class="hover-underline-animation"> See the whole thing </span>
-                  <svg viewBox="0 0 46 16" height="10" width="30" xmlns="http://www.w3.org/2000/svg" id="arrow-horizontal">
-                    <path transform="translate(30)" d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z" data-name="Path 10" id="Path_10"></path>
+                  <span class="hover-underline-animation">
+                    See the whole thing
+                  </span>
+                  <svg
+                    viewBox="0 0 46 16"
+                    height="10"
+                    width="30"
+                    xmlns="http://www.w3.org/2000/svg"
+                    id="arrow-horizontal"
+                  >
+                    <path
+                      transform="translate(30)"
+                      d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z"
+                      data-name="Path 10"
+                      id="Path_10"
+                    ></path>
                   </svg>
                 </a>
               </div>
@@ -203,9 +238,22 @@
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                 </p>
                 <a class="project-link-btn">
-                  <span class="hover-underline-animation"> See the whole thing </span>
-                  <svg viewBox="0 0 46 16" height="10" width="30" xmlns="http://www.w3.org/2000/svg" id="arrow-horizontal">
-                    <path transform="translate(30)" d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z" data-name="Path 10" id="Path_10"></path>
+                  <span class="hover-underline-animation">
+                    See the whole thing
+                  </span>
+                  <svg
+                    viewBox="0 0 46 16"
+                    height="10"
+                    width="30"
+                    xmlns="http://www.w3.org/2000/svg"
+                    id="arrow-horizontal"
+                  >
+                    <path
+                      transform="translate(30)"
+                      d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z"
+                      data-name="Path 10"
+                      id="Path_10"
+                    ></path>
                   </svg>
                 </a>
               </div>
@@ -224,14 +272,26 @@
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                 </p>
                 <a class="project-link-btn">
-                  <span class="hover-underline-animation"> See the whole thing </span>
-                  <svg viewBox="0 0 46 16" height="10" width="30" xmlns="http://www.w3.org/2000/svg" id="arrow-horizontal">
-                    <path transform="translate(30)" d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z" data-name="Path 10" id="Path_10"></path>
+                  <span class="hover-underline-animation">
+                    See the whole thing
+                  </span>
+                  <svg
+                    viewBox="0 0 46 16"
+                    height="10"
+                    width="30"
+                    xmlns="http://www.w3.org/2000/svg"
+                    id="arrow-horizontal"
+                  >
+                    <path
+                      transform="translate(30)"
+                      d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z"
+                      data-name="Path 10"
+                      id="Path_10"
+                    ></path>
                   </svg>
                 </a>
               </div>
-        
-         </div>
+            </div>
           </div>
         </div>
         <!-- <a class="project-link-btn" download="media/git-cheat-sheet-education.pdf">
@@ -240,9 +300,7 @@
             <path transform="translate(30)" d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z" data-name="Path 10" id="Path_10"></path>
           </svg>
         </a> -->
-
       </section>
-
 
       <section class="section-contact" id="contact">
         <div class="container">
