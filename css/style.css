@@ -266,16 +266,18 @@ body {
   padding: 9.6rem 0;
 }
 .project {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 3.2rem;
+  display: flex;
 
-  /* display: flex;
-  gap: 3.2rem; */
-  /* flex-wrap: wrap; */
-  /* width: 100%; */
-  /* flex: 0 1 30%; */
-  /* flex-wrap: wrap; */
+  gap: 2.4rem;
+  align-items: center;
+  justify-content: center;
+
+  flex-wrap: wrap;
+}
+
+.project-box {
+  max-width: 400px;
+  min-width: 300px;
 }
 .project-img {
   width: 100%;

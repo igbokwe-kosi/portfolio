@@ -18,11 +18,7 @@
     font-size: 6.2rem;
   }
 }
-@media (max-width: 56.25em) {
-  .project {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
+
 @media (max-width: 48.875em) {
   html {
     font-size: 50%;
@@ -101,10 +97,6 @@
     width: 80%;
   }
 
-  .project {
-    grid-template-columns: 1fr;
-    padding: 0 5.6rem;
-  }
   .next-page {
     display: none;
   }
