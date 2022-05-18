@@ -134,6 +134,7 @@ body {
 }
 
 .header-logo {
+  font-family: 'Mali', cursive;
   font-size: 3.2rem;
 }
 
@@ -452,7 +453,6 @@ body {
   margin-top: 9.6rem;
 }
 
-/*? secondary buttons by cssbuttons.io*/
 .project-link-btn {
   border: none;
   background: none;
