@@ -1,43 +1,43 @@
-const headerEL = document.querySelector('.header');
-const btnToggle = document.querySelector('.btn--toggle');
+const headerEL = document.querySelector(".header");
+const btnToggle = document.querySelector(".btn--toggle");
 
 // window.addEventListener('load', () => {
 //   alert('Website still in the works but you can check it out though!');
 // }, );
 
-btnToggle.addEventListener('click', function () {
-  btnToggle.classList.toggle('btn--close');
-  headerEL.classList.toggle('nav-open');
+btnToggle.addEventListener("click", function () {
+  btnToggle.classList.toggle("btn--close");
+  headerEL.classList.toggle("nav-open");
 });
 
 ///////////////////////////////////////////////////////////
 // Set current year
-const yearEl = document.querySelector('.date');
+const yearEl = document.querySelector(".date");
 const currentYear = new Date().getFullYear();
 yearEl.textContent = currentYear;
 
 ///////////////////////////////////////////////////////////
 // Smooth scrolling animation
 
-const allLinks = document.querySelectorAll('a:link');
+const smoothScrollLinks = document.querySelectorAll(".link");
 
-allLinks.forEach(function (link) {
-  link.addEventListener('click', function (e) {
+smoothScrollLinks.forEach(function (link) {
+  link.addEventListener("click", function (e) {
     e.preventDefault();
-    headerEL.classList.remove('nav-open');
-    const href = link.getAttribute('href');
+    headerEL.classList.remove("nav-open");
+    const href = link.getAttribute("href");
 
     // Scroll back to top
-    if (href === '#')
+    if (href === "#")
       window.scrollTo({
         top: 0,
-        behavior: 'smooth',
+        behavior: "smooth",
       });
 
     // Scroll to other links
-    if (href !== '#' && href.startsWith('#')) {
+    if (href !== "#" && href.startsWith("#")) {
       const sectionEl = document.querySelector(href);
-      sectionEl.scrollIntoView({ behavior: 'smooth' });
+      sectionEl.scrollIntoView({ behavior: "smooth" });
     }
   });
 });
@@ -45,7 +45,7 @@ allLinks.forEach(function (link) {
 ///////////////////////////////////////////////////////////
 // Sticky navigation
 
-const sectionHeroEl = document.querySelector('.section-hero');
+const sectionHeroEl = document.querySelector(".section-hero");
 
 const obs = new IntersectionObserver(
   function (entries) {
@@ -53,18 +53,18 @@ const obs = new IntersectionObserver(
     console.log(ent);
 
     if (ent.isIntersecting === false) {
-      document.body.classList.add('sticky');
+      document.body.classList.add("sticky");
     }
 
     if (ent.isIntersecting === true) {
-      document.body.classList.remove('sticky');
+      document.body.classList.remove("sticky");
     }
   },
   {
     // In the viewport
     root: null,
     threshold: 0,
-    rootMargin: '-80px',
+    rootMargin: "-80px",
   }
 );
 obs.observe(sectionHeroEl);
