@@ -228,10 +228,10 @@ body {
   padding: 9.6rem 0;
 }
 .about-text-box {
-  max-width: 100rem;
+  max-width: 120rem;
 }
 .about-text {
-  font-weight: 300;
+  font-weight: 400;
   font-size: 2.4rem;
   line-height: 1.8;
   margin-bottom: 6.4rem;
@@ -240,11 +240,6 @@ body {
 .more-info {
   display: flex;
   justify-content: space-between;
-}
-.about-year {
-  /* margin-right: auto; */
-  font-weight: 700;
-  font-size: 3.2rem;
 }
 
 .skills {
