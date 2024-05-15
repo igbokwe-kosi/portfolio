@@ -157,28 +157,7 @@ body {
   letter-spacing: 2px;
   font-weight: 400;
 }
-/* ------------------------------------SOCIAL MEDIA ICON SECTION------------------------------------ */
-/* .socials {
-  position: absolute;
-  top: 40%;
-  margin-left: -4rem;
-  left: 2rem;
-  transform: translateY(-50%);
-}
-.social-list {
-  display: flex;
-  gap: 1.2rem;
-  flex-direction: column;
-  list-style: none;
-}
-.social-icon {
-  width: 12px;
-  height: 12px;
-}
 
-.section-hero.container {
-  position: relative;
-} */
 /* ------------------------------------HERO SECTION------------------------------------ */
 
 .heading-primary.name {
@@ -414,13 +393,6 @@ body {
   width: 1.2rem;
   height: 1.2rem;
 }
-/* .contact-social-link:link,
-.contact-social-link:visited {
-  font-weight: 300;
-  font-size: 2.4rem;
-  text-decoration: none;
-  color: inherit;
-} */
 
 /* ------------------------------------FOOTER------------------------------------ */
 .footer {

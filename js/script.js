@@ -1,9 +1,8 @@
+///////////////////////////////////////////////////////////
+// Hambuger menu functionality
+
 const headerEL = document.querySelector(".header");
 const btnToggle = document.querySelector(".btn--toggle");
-
-// window.addEventListener('load', () => {
-//   alert('Website still in the works but you can check it out though!');
-// }, );
 
 btnToggle.addEventListener("click", function () {
   btnToggle.classList.toggle("btn--close");
@@ -11,7 +10,7 @@ btnToggle.addEventListener("click", function () {
 });
 
 ///////////////////////////////////////////////////////////
-// Set current year
+// Always set the current year
 const yearEl = document.querySelector(".date");
 const currentYear = new Date().getFullYear();
 yearEl.textContent = currentYear;
