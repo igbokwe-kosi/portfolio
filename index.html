@@ -6,336 +6,408 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="A portfolio page to show my skills to prospective customers"
+      content="Kosiso Igbokwe — Full-Stack Developer & HCI Researcher. Building thoughtful, performant web experiences."
     />
-    <title>My Portfolio Page &mdash; Kosiso</title>
+    <title>Kosiso Igbokwe — Developer</title>
 
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Mali:wght@700&family=Inter:wght@100..900&family=Roboto:wght@300;400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
 
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/query.css" />
-
-    <script
-      type="module"
-      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
-    ></script>
-    <script
-      nomodule
-      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
-    ></script>
     <script src="js/script.js" defer></script>
   </head>
   <body>
-    <div class="message"></div>
-    <header class="header">
-      <div class="header-logo">&lt;/kosi&gt;</div>
-      <nav class="main-nav">
-        <ul class="main-nav-list">
-          <li class="main-nav-item">
-            <a href="#about" class="main-nav-link link">About</a>
-          </li>
-          <li class="main-nav-item">
-            <a href="#project" class="main-nav-link link">Project</a>
-          </li>
-          <li class="main-nav-item">
-            <a href="#contact" class="main-nav-link link">Contact</a>
-          </li>
 
-          <li class="main-nav-item">
-            <button class="btn--social">
-              <span>Socials</span>
-              <span>
-                <ion-icon
-                  class="btn-icon--social"
-                  name="share-social-outline"
-                ></ion-icon>
-              </span>
-              <ul>
-                <li>
-                  <a
-                    href="https://instagram.com/igbokwe_kosiso"
-                    class="btn--social__link"
-                    target="_blank"
-                  >
-                    <ion-icon
-                      class="btn-icon--social"
-                      name="logo-instagram"
-                    ></ion-icon>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://twitter.com/igbokwe_kosiso"
-                    class="btn--social__link"
-                    target="_blank"
-                  >
-                    <ion-icon
-                      class="btn-icon--social"
-                      name="logo-twitter"
-                    ></ion-icon>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://github.com/igbokwe-kosi"
-                    class="btn--social__link"
-                    target="_blank"
-                  >
-                    <ion-icon
-                      class="btn-icon--social"
-                      name="logo-github"
-                    ></ion-icon>
-                  </a>
-                </li>
-              </ul>
-            </button>
+    <!-- Custom cursor (hidden on touch devices via CSS) -->
+    <div class="cursor" aria-hidden="true"></div>
+    <div class="cursor-follower" aria-hidden="true"></div>
+
+    <!-- ===================== NAVIGATION ===================== -->
+    <header class="header" id="header">
+      <nav class="nav container">
+        <a href="#" class="nav-logo" aria-label="Home">
+          <span class="logo-bracket">&lt;</span>kosi<span class="logo-bracket">/&gt;</span>
+        </a>
+
+        <ul class="nav-list" id="nav-list">
+          <li><a href="#about"    class="nav-link">About</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#contact"  class="nav-link">Contact</a></li>
+          <li>
+            <a
+              href="https://github.com/igbokwe-kosi"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="nav-link nav-link--cta"
+            >GitHub ↗</a>
           </li>
         </ul>
+
+        <button
+          class="nav-toggle"
+          id="nav-toggle"
+          aria-label="Toggle navigation"
+          aria-expanded="false"
+          aria-controls="nav-list"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </nav>
-
-      <button class="btn--toggle">
-        <span class="btn--toggle__line"></span>
-        <span class="btn--toggle__line"></span>
-        <span class="btn--toggle__line"></span>
-      </button>
     </header>
-    <section class="section-hero container">
-      <div class="hero-text-box">
-        <h1 class="heading-primary">Hi! I'm</h1>
-        <h1 class="heading-primary name">Kosiso Igbokwe</h1>
-        <p class="hero-text">
-          <span class="hero-text--1"> Welcome to my online space. </span>
-          <span class="hero-text--2"> Your friendly Frontend Developer. </span>
+
+    <!-- ===================== HERO ===================== -->
+    <section class="hero" id="hero">
+      <!-- Ambient blobs -->
+      <div class="hero-blob hero-blob--1" aria-hidden="true"></div>
+      <div class="hero-blob hero-blob--2" aria-hidden="true"></div>
+      <div class="hero-blob hero-blob--3" aria-hidden="true"></div>
+
+      <div class="hero-content container">
+        <p class="hero-eyebrow">Hello, world ✦</p>
+        <h1 class="hero-name">
+          <span class="hero-name__first">Kosiso</span>
+          <span class="hero-name__last">Igbokwe</span>
+        </h1>
+        <p class="hero-role">
+          <span class="hero-role__prefix">I build&nbsp;</span>
+          <span class="hero-role__typed" id="typed-text" aria-live="polite"></span><span class="hero-role__cursor" aria-hidden="true">|</span>
         </p>
-        <a href="#about" class="next-page link"
-          ><ion-icon
-            name="chevron-down-outline"
-            class="next-page-icon"
-          ></ion-icon>
-        </a>
+        <p class="hero-desc">
+          Final-year CS student at the University of Calgary &mdash; shipping full-stack apps,
+          researching human-computer interaction, and making the web a bit more delightful.
+        </p>
+        <div class="hero-cta">
+          <a href="#projects" class="btn btn--primary">View my work</a>
+          <a href="#contact"  class="btn btn--ghost">Get in touch</a>
+        </div>
       </div>
+
+      <a href="#about" class="scroll-indicator" aria-label="Scroll to about section">
+        <span class="scroll-indicator__line"></span>
+        <span class="scroll-indicator__dot"></span>
+      </a>
     </section>
+
+    <!-- ===================== MAIN ===================== -->
     <main>
-      <section id="about" class="section-about">
+
+      <!-- ---- ABOUT ---- -->
+      <section class="section about" id="about">
         <div class="container">
-          <h2 class="heading-secondary">About me</h2>
-          <div class="about-text-box">
-            <h4 class="about-text">
-              👋 Hi there! I'm Kosisochukwu Igbokwe, a third-year Computer
-              Science student at the University of Calgary, Alberta. With Udemy
-              certifications in HTML/CSS and JavaScript, I'm currently diving
-              deep into React. Passionate about front-end development and user
-              experience design, I thrive on solving challenges and crafting
-              innovative solutions.
-            </h4>
+
+          <div class="section-header reveal">
+            <span class="section-label">01 &sol; about</span>
+            <h2 class="section-title">A bit about me</h2>
           </div>
-          <div class="more-info">
-            <div class="skills">
-              <h3 class="heading-tertiary">skills</h3>
-              <ul class="skill-list">
-                <li class="skill-item">
-                  <div class="language">HTML</div>
-                </li>
-                <li class="skill-item">
-                  <div class="language">CSS</div>
-                </li>
-                <li class="skill-item">
-                  <div class="language">Javascript</div>
-                </li>
-                <li class="skill-item">
-                  <div class="language">React</div>
-                </li>
-                <li class="skill-item">
-                  <div class="language">More to come!</div>
-                </li>
-              </ul>
+
+          <div class="about-grid">
+            <!-- Left: bio -->
+            <div class="about-text reveal">
+              <p>
+                I&rsquo;m <strong>Kosisochukwu Igbokwe</strong>, a final-year Computer Science student
+                at the <strong>University of Calgary</strong> (GPA&nbsp;3.9&thinsp;/&thinsp;4.0), born in Nigeria
+                and based in Canada. I research human-computer interaction and data visualization at
+                the <strong>Interactions&nbsp;Lab</strong>, and I&rsquo;ve shipped production code as a
+                full-stack intern.
+              </p>
+              <p>
+                I care deeply about thoughtful UX and clean engineering &mdash; the kind of work where
+                design and code reinforce each other. When I&rsquo;m not in the lab, I&rsquo;m building
+                side projects, learning new tools, and breaking things (productively).
+              </p>
+              <a href="mailto:igbokwekosiso@gmail.com" class="btn btn--primary about-cta">
+                Say hello &rarr;
+              </a>
+            </div>
+
+            <!-- Right: stats + skills -->
+            <div class="about-right">
+              <div class="stats-grid reveal reveal-delay-1">
+                <div class="stat-card">
+                  <span class="stat-number">3.9</span>
+                  <span class="stat-label">GPA &sol; 4.0</span>
+                </div>
+                <div class="stat-card">
+                  <span class="stat-number">4+</span>
+                  <span class="stat-label">Years coding</span>
+                </div>
+                <div class="stat-card">
+                  <span class="stat-number">HCI</span>
+                  <span class="stat-label">Research lab</span>
+                </div>
+                <div class="stat-card">
+                  <span class="stat-number">&infin;</span>
+                  <span class="stat-label">Coffees consumed</span>
+                </div>
+              </div>
+
+              <div class="skills-block reveal reveal-delay-2">
+                <h3 class="skills-title">Tech stack</h3>
+                <div class="skills-grid">
+                  <div class="skill-category">
+                    <span class="skill-category__label">Frontend</span>
+                    <div class="skill-pills">
+                      <span class="pill">TypeScript</span>
+                      <span class="pill">React</span>
+                      <span class="pill">Next.js</span>
+                      <span class="pill">React Native</span>
+                      <span class="pill">Tailwind CSS</span>
+                    </div>
+                  </div>
+                  <div class="skill-category">
+                    <span class="skill-category__label">Backend</span>
+                    <div class="skill-pills">
+                      <span class="pill">Node.js</span>
+                      <span class="pill">Python</span>
+                      <span class="pill">Django</span>
+                      <span class="pill">Express</span>
+                      <span class="pill">PostgreSQL</span>
+                    </div>
+                  </div>
+                  <div class="skill-category">
+                    <span class="skill-category__label">Tools</span>
+                    <div class="skill-pills">
+                      <span class="pill">Docker</span>
+                      <span class="pill">AWS</span>
+                      <span class="pill">Figma</span>
+                      <span class="pill">Supabase</span>
+                      <span class="pill">Git</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
+
         </div>
       </section>
-      <section id="project" class="section-project">
+
+      <!-- ---- PROJECTS ---- -->
+      <section class="section projects" id="projects">
         <div class="container">
-          <h2 class="heading-secondary">Latest passion projects</h2>
-          <div class="project">
-            <div class="project-box">
-              <div class="project-img-box">
-                <img
-                  src="img/project--1.png"
-                  alt="Image of Tip Calculator project"
-                  class="project-img"
-                />
+
+          <div class="section-header reveal">
+            <span class="section-label">02 &sol; projects</span>
+            <h2 class="section-title">Selected work</h2>
+          </div>
+
+          <div class="projects-list">
+
+            <!-- Project 1 · TripTribe -->
+            <article class="project-card reveal">
+              <div class="project-card__visual project-card__visual--1">
+                <div class="project-card__mockup" aria-hidden="true">
+                  <div class="mock-bar"></div>
+                  <div class="mock-body">
+                    <div class="mock-heading"></div>
+                    <div class="mock-subheading"></div>
+                    <div class="mock-cards-row">
+                      <div class="mock-trip-card">
+                        <div class="mock-trip-card__img"></div>
+                        <div class="mock-trip-card__line"></div>
+                        <div class="mock-trip-card__line mock-trip-card__line--sm"></div>
+                      </div>
+                      <div class="mock-trip-card">
+                        <div class="mock-trip-card__img"></div>
+                        <div class="mock-trip-card__line"></div>
+                        <div class="mock-trip-card__line mock-trip-card__line--sm"></div>
+                      </div>
+                      <div class="mock-trip-card">
+                        <div class="mock-trip-card__img"></div>
+                        <div class="mock-trip-card__line"></div>
+                        <div class="mock-trip-card__line mock-trip-card__line--sm"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div class="project-text-box">
-                <h3 class="project-text-header heading-tertiary">
-                  Tip Calculator
-                </h3>
-                <p class="project-text">
-                  Built with HTML, CSS, and JS, this project is a tip calculator
+
+              <div class="project-card__info">
+                <div class="project-card__meta">
+                  <span class="project-card__num">01</span>
+                  <span class="project-card__year">2024</span>
+                </div>
+                <h3 class="project-card__title">TripTribe</h3>
+                <p class="project-card__desc">
+                  A collaborative trip-planning platform &mdash; shared itineraries, bookings,
+                  and group decision-making in one place. Built as a full-stack team
+                  project at university.
                 </p>
-                <a
-                  class="project-link-btn"
-                  href="https://kosi-tip-calculator.netlify.app/"
-                  target="_blank"
-                >
-                  <span class="hover-underline-animation">
-                    See the whole thing
-                  </span>
-                  <svg
-                    viewBox="0 0 46 16"
-                    height="10"
-                    width="30"
-                    xmlns="http://www.w3.org/2000/svg"
-                    id="arrow-horizontal"
-                  >
-                    <path
-                      transform="translate(30)"
-                      d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z"
-                      data-name="Path 10"
-                      id="Path_10"
-                    ></path>
-                  </svg>
-                </a>
+                <div class="project-card__tags">
+                  <span class="tag">TypeScript</span>
+                  <span class="tag">React</span>
+                  <span class="tag">Node.js</span>
+                  <span class="tag">PostgreSQL</span>
+                </div>
+                <div class="project-card__links">
+                  <a
+                    href="https://github.com/igbokwe-kosi/seng-513-triptribe"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-link"
+                  >GitHub ↗</a>
+                </div>
               </div>
-            </div>
-            <div class="project-box">
-              <div class="project-img-box">
-                <img
-                  src="img/project--2.png"
-                  alt="omnifood project"
-                  class="project-img"
-                />
+            </article>
+
+            <!-- Project 2 · The Wild Oasis -->
+            <article class="project-card project-card--reverse reveal">
+              <div class="project-card__visual project-card__visual--2">
+                <div class="project-card__mockup" aria-hidden="true">
+                  <div class="mock-bar"></div>
+                  <div class="mock-body">
+                    <div class="mock-dashboard">
+                      <div class="mock-sidebar">
+                        <div class="mock-nav-dot"></div>
+                        <div class="mock-nav-dot"></div>
+                        <div class="mock-nav-dot"></div>
+                        <div class="mock-nav-dot"></div>
+                        <div class="mock-nav-dot"></div>
+                      </div>
+                      <div class="mock-main-area">
+                        <div class="mock-stats-row">
+                          <div class="mock-stat-box"></div>
+                          <div class="mock-stat-box"></div>
+                          <div class="mock-stat-box"></div>
+                        </div>
+                        <div class="mock-table-header"></div>
+                        <div class="mock-table-row"></div>
+                        <div class="mock-table-row"></div>
+                        <div class="mock-table-row"></div>
+                        <div class="mock-table-row"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div class="project-text-box">
-                <h3 class="project-text-header heading-tertiary">Natours</h3>
-                <p class="project-text">
-                  Built with HTML, CSS and SASS, this project is a landing page
-                  of a fictional tour company
+
+              <div class="project-card__info">
+                <div class="project-card__meta">
+                  <span class="project-card__num">02</span>
+                  <span class="project-card__year">2024</span>
+                </div>
+                <h3 class="project-card__title">The Wild Oasis</h3>
+                <p class="project-card__desc">
+                  A full-featured SaaS dashboard for managing cabin bookings &mdash;
+                  check-ins, check-outs, occupancy charts, and guest management.
+                  Real-time data powered by Supabase.
                 </p>
-                <a
-                  class="project-link-btn"
-                  href="https://natoursbykosi.netlify.app/"
-                  target="_blank"
-                >
-                  <span class="hover-underline-animation">
-                    See the whole thing
-                  </span>
-                  <svg
-                    viewBox="0 0 46 16"
-                    height="10"
-                    width="30"
-                    xmlns="http://www.w3.org/2000/svg"
-                    id="arrow-horizontal"
-                  >
-                    <path
-                      transform="translate(30)"
-                      d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z"
-                      data-name="Path 10"
-                      id="Path_10"
-                    ></path>
-                  </svg>
-                </a>
+                <div class="project-card__tags">
+                  <span class="tag">React</span>
+                  <span class="tag">Supabase</span>
+                  <span class="tag">React Query</span>
+                  <span class="tag">Recharts</span>
+                </div>
+                <div class="project-card__links">
+                  <a
+                    href="https://github.com/igbokwe-kosi/the-wild-oasis"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-link"
+                  >GitHub ↗</a>
+                </div>
               </div>
-            </div>
-            <div class="project-box">
-              <div class="project-img-box">
-                <img
-                  src="img/project--3.png"
-                  alt="Image of Calculator project"
-                  class="project-img"
-                />
+            </article>
+
+            <!-- Project 3 · WorldWise -->
+            <article class="project-card reveal">
+              <div class="project-card__visual project-card__visual--3">
+                <div class="project-card__mockup" aria-hidden="true">
+                  <div class="mock-bar"></div>
+                  <div class="mock-body">
+                    <div class="mock-map">
+                      <div class="mock-pin mock-pin--a"></div>
+                      <div class="mock-pin mock-pin--b"></div>
+                      <div class="mock-pin mock-pin--c"></div>
+                      <div class="mock-map-panel"></div>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div class="project-text-box">
-                <h3 class="project-text-header heading-tertiary">Calculator</h3>
-                <p class="project-text">
-                  Built with HTML, CSS, and JS, this project is a simple
-                  calculator with different themes
+
+              <div class="project-card__info">
+                <div class="project-card__meta">
+                  <span class="project-card__num">03</span>
+                  <span class="project-card__year">2024</span>
+                </div>
+                <h3 class="project-card__title">WorldWise</h3>
+                <p class="project-card__desc">
+                  A personal travel diary with an interactive world map &mdash;
+                  log visited cities, add notes, and track your journey across
+                  the globe. Leaflet-powered, React-built.
                 </p>
-                <a
-                  class="project-link-btn"
-                  href="https://kosi-calculator-app.netlify.app/"
-                  target="_blank"
-                >
-                  <span class="hover-underline-animation">
-                    See the whole thing
-                  </span>
-                  <svg
-                    viewBox="0 0 46 16"
-                    height="10"
-                    width="30"
-                    xmlns="http://www.w3.org/2000/svg"
-                    id="arrow-horizontal"
-                  >
-                    <path
-                      transform="translate(30)"
-                      d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z"
-                      data-name="Path 10"
-                      id="Path_10"
-                    ></path>
-                  </svg>
-                </a>
+                <div class="project-card__tags">
+                  <span class="tag">React</span>
+                  <span class="tag">Leaflet</span>
+                  <span class="tag">Context API</span>
+                  <span class="tag">CSS Modules</span>
+                </div>
+                <div class="project-card__links">
+                  <a
+                    href="https://github.com/igbokwe-kosi/worldwise"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-link"
+                  >GitHub ↗</a>
+                </div>
               </div>
-            </div>
+            </article>
+
           </div>
         </div>
       </section>
 
-      <section class="section-contact" id="contact">
+      <!-- ---- CONTACT ---- -->
+      <section class="section contact" id="contact">
         <div class="container">
-          <h2 class="heading-secondary">Contact</h2>
-        </div>
-        <div class="container">
-          <div class="contact-box">
-            <div class="contact-header-box">
-              <p class="contact-heading">Hit me up for Future Project!</p>
-            </div>
-            <div class="contact-text-box">
-              <a href="mailto:igbokwekosiso@gmail.com" class="contact-mail">
-                igbokwekosiso@gmail.com
-              </a>
-              <a href="tel:08146416889" class="contact-phone">
-                +1 825 994 7440
-              </a>
-              <div class="contact-social">
-                <a
-                  href="https://www.instagram.com/igbokwe_kosiso"
-                  target="_blank"
-                  class="contact-social-link"
-                  >Instagram</a
-                >
-                <ion-icon class="contact-dot" name="ellipse-outline"></ion-icon>
-                <a
-                  href="https://www.twitter.com/igbokwe_kosiso"
-                  target="_blank"
-                  class="contact-social-link"
-                  >Twitter</a
-                >
-                <ion-icon class="contact-dot" name="ellipse-outline"></ion-icon>
-                <a
-                  href="https://www.github.com/igbokwe-kosi"
-                  target="_blank"
-                  class="contact-social-link"
-                  >GitHub</a
-                >
-              </div>
+          <div class="section-header reveal">
+            <span class="section-label">03 &sol; contact</span>
+            <h2 class="section-title">Let&rsquo;s build something</h2>
+          </div>
+
+          <div class="contact-content reveal">
+            <p class="contact-desc">
+              Open to internship opportunities, collaborations, and interesting conversations.
+              If you&rsquo;ve got an idea or just want to say hi &mdash; my inbox is always open.
+            </p>
+            <a href="mailto:igbokwekosiso@gmail.com" class="contact-email">
+              igbokwekosiso@gmail.com
+            </a>
+            <div class="contact-socials">
+              <a href="https://github.com/igbokwe-kosi"         target="_blank" rel="noopener noreferrer" class="social-link">GitHub</a>
+              <span class="social-dot" aria-hidden="true">&middot;</span>
+              <a href="https://twitter.com/igbokwe_kosiso"       target="_blank" rel="noopener noreferrer" class="social-link">Twitter</a>
+              <span class="social-dot" aria-hidden="true">&middot;</span>
+              <a href="https://instagram.com/igbokwe_kosiso"     target="_blank" rel="noopener noreferrer" class="social-link">Instagram</a>
             </div>
           </div>
         </div>
+
+        <!-- Decorative large background text -->
+        <div class="contact-deco" aria-hidden="true">contact</div>
       </section>
+
     </main>
+
+    <!-- ===================== FOOTER ===================== -->
     <footer class="footer">
-      <div class="footer-star">
-        <ion-icon name="star-outline"></ion-icon>
-        <ion-icon name="star-outline"></ion-icon>
-        <ion-icon name="star-outline"></ion-icon>
+      <div class="container footer-inner">
+        <span class="footer-logo">
+          <span class="logo-bracket">&lt;</span>kosi<span class="logo-bracket">/&gt;</span>
+        </span>
+        <p class="footer-copy">
+          Designed &amp; built by Kosiso Igbokwe &middot; <span class="year"></span>
+        </p>
       </div>
-      <p class="footer-copy">
-        &copy; <span class="date">2027</span> by Kosiso Igbokwe
-      </p>
     </footer>
+
   </body>
 </html>

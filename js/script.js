@@ -1,69 +1,138 @@
-///////////////////////////////////////////////////////////
-// Hambuger menu functionality
+/* ==============================================
+   PORTFOLIO — KOSISO IGBOKWE
+   script.js
+============================================== */
 
-const headerEL = document.querySelector(".header");
-const btnToggle = document.querySelector(".btn--toggle");
+/* ===== CUSTOM CURSOR ===== */
+const cursor = document.querySelector('.cursor');
+const follower = document.querySelector('.cursor-follower');
 
-btnToggle.addEventListener("click", function () {
-  btnToggle.classList.toggle("btn--close");
-  headerEL.classList.toggle("nav-open");
+if (cursor && follower && window.matchMedia('(hover: hover)').matches) {
+  let mx = window.innerWidth / 2;
+  let my = window.innerHeight / 2;
+  let fx = mx, fy = my;
+
+  document.addEventListener('mousemove', e => {
+    mx = e.clientX;
+    my = e.clientY;
+    cursor.style.left = mx + 'px';
+    cursor.style.top  = my + 'px';
+  });
+
+  (function animateFollower() {
+    fx += (mx - fx) * 0.12;
+    fy += (my - fy) * 0.12;
+    follower.style.left = fx + 'px';
+    follower.style.top  = fy + 'px';
+    requestAnimationFrame(animateFollower);
+  })();
+
+  const hoverTargets = 'a, button, .pill, .stat-card, .project-link';
+  document.querySelectorAll(hoverTargets).forEach(el => {
+    el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
+    el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
+  });
+}
+
+/* ===== CURRENT YEAR ===== */
+document.querySelectorAll('.year').forEach(el => {
+  el.textContent = new Date().getFullYear();
 });
 
-///////////////////////////////////////////////////////////
-// Always set the current year
-const yearEl = document.querySelector(".date");
-const currentYear = new Date().getFullYear();
-yearEl.textContent = currentYear;
+/* ===== STICKY NAV ===== */
+const header = document.getElementById('header');
+window.addEventListener('scroll', () => {
+  header.classList.toggle('scrolled', window.scrollY > 50);
+}, { passive: true });
 
-///////////////////////////////////////////////////////////
-// Smooth scrolling animation
+/* ===== MOBILE NAV TOGGLE ===== */
+const navToggle = document.getElementById('nav-toggle');
+const navList   = document.getElementById('nav-list');
 
-const smoothScrollLinks = document.querySelectorAll(".link");
+navToggle.addEventListener('click', () => {
+  const isOpen = navToggle.classList.toggle('active');
+  navToggle.setAttribute('aria-expanded', isOpen);
+  navList.classList.toggle('nav-list--open', isOpen);
+  document.body.style.overflow = isOpen ? 'hidden' : '';
+});
 
-smoothScrollLinks.forEach(function (link) {
-  link.addEventListener("click", function (e) {
-    e.preventDefault();
-    headerEL.classList.remove("nav-open");
-    const href = link.getAttribute("href");
+navList.querySelectorAll('.nav-link').forEach(link => {
+  link.addEventListener('click', () => {
+    navToggle.classList.remove('active');
+    navToggle.setAttribute('aria-expanded', 'false');
+    navList.classList.remove('nav-list--open');
+    document.body.style.overflow = '';
+  });
+});
 
-    // Scroll back to top
-    if (href === "#")
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth",
-      });
-
-    // Scroll to other links
-    if (href !== "#" && href.startsWith("#")) {
-      const sectionEl = document.querySelector(href);
-      sectionEl.scrollIntoView({ behavior: "smooth" });
+/* ===== SMOOTH SCROLL ===== */
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+  link.addEventListener('click', e => {
+    const href = link.getAttribute('href');
+    if (href === '#') {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+    const target = document.querySelector(href);
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth' });
     }
   });
 });
 
-///////////////////////////////////////////////////////////
-// Sticky navigation
+/* ===== TYPEWRITER ===== */
+const typedEl = document.getElementById('typed-text');
+const roles   = [
+  'full-stack apps.',
+  'React interfaces.',
+  'restful APIs.',
+  'beautiful UIs.',
+  'the future.',
+];
 
-const sectionHeroEl = document.querySelector(".section-hero");
+let roleIndex   = 0;
+let charIndex   = 0;
+let isDeleting  = false;
 
-const obs = new IntersectionObserver(
-  function (entries) {
-    const ent = entries[0];
-    console.log(ent);
+function typeWriter() {
+  const current = roles[roleIndex];
+  const displayed = isDeleting
+    ? current.slice(0, charIndex - 1)
+    : current.slice(0, charIndex + 1);
 
-    if (ent.isIntersecting === false) {
-      document.body.classList.add("sticky");
-    }
+  typedEl.textContent = displayed;
+  charIndex = isDeleting ? charIndex - 1 : charIndex + 1;
 
-    if (ent.isIntersecting === true) {
-      document.body.classList.remove("sticky");
-    }
-  },
-  {
-    // In the viewport
-    root: null,
-    threshold: 0,
-    rootMargin: "-80px",
+  let delay = isDeleting ? 55 : 95;
+
+  if (!isDeleting && charIndex === current.length) {
+    delay = 2200;
+    isDeleting = true;
+  } else if (isDeleting && charIndex === 0) {
+    isDeleting  = false;
+    roleIndex   = (roleIndex + 1) % roles.length;
+    delay       = 400;
   }
-);
-obs.observe(sectionHeroEl);
+
+  setTimeout(typeWriter, delay);
+}
+
+/* Start after hero entrance animations settle */
+setTimeout(typeWriter, 1500);
+
+/* ===== SCROLL REVEAL ===== */
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    entry.target.classList.add('in-view');
+    revealObserver.unobserve(entry.target);
+  });
+}, {
+  root:       null,
+  threshold:  0.12,
+  rootMargin: '0px 0px -60px 0px',
+});
+
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));

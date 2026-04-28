@@ -1,103 +1,167 @@
+/* ==============================================
+   PORTFOLIO — RESPONSIVE BREAKPOINTS
+   query.css
+============================================== */
+
+/* ===== LARGE TABLET  (≤ 1200px) ===== */
 @media (max-width: 75em) {
-  html {
-    font-size: 56.25%;
+  :root {
+    --section-py: 10rem;
+    --container:  100rem;
   }
+
   .container {
-    max-width: 100rem;
-    padding: 0 2.4rem;
+    padding: 0 3.6rem;
   }
-  .heading-primary {
-    font-size: 9.8rem;
-    font-weight: 700;
+
+  .about-grid {
+    gap: 5rem;
   }
-  .contact-mail:link,
-  .contact-mail:visited {
-    font-size: 2.4rem;
-  }
-  .contact-heading {
-    font-size: 6.2rem;
+
+  .project-card {
+    gap: 4rem;
   }
 }
 
-@media (max-width: 48.875em) {
-  html {
-    font-size: 50%;
+/* ===== TABLET  (≤ 1024px) ===== */
+@media (max-width: 64em) {
+  :root {
+    --section-py: 9rem;
   }
 
-  .hero-text-box {
-    width: 100%;
+  /* Nav: show hamburger, hide list */
+  .nav-list {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(7, 7, 16, 0.97);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    z-index: 99;
   }
-  .about-text {
-    font-size: 3rem;
-    margin-bottom: 2.4rem;
-  }
-
-  .btn--toggle {
+  .nav-list.nav-list--open {
     display: flex;
   }
-  .main-nav {
-    overflow-y: hidden !important;
-    background-color: var(--primary-color-light-10);
-    transform: translateY(100%);
-    transition: all 0.5s cubic-bezier(0.17, 0.67, 0.61, 1.46);
-    /* 1) Hide it visually */
-    opacity: 0;
+  .nav-list .nav-link {
+    font-size: 2.8rem;
+    font-weight: 500;
+    padding: 1.2rem 2.4rem;
+  }
+  .nav-toggle {
+    display: flex;
+  }
 
-    /* 2) Make it unaccessible to mouse and keyboard */
-    pointer-events: none;
+  /* About: stack columns */
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 5.6rem;
+  }
 
-    /* 3) Hide it from screen readers */
-    visibility: hidden;
+  /* Projects: stack columns, always visual on top */
+  .project-card,
+  .project-card--reverse {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "visual"
+      "info";
+    gap: 3.2rem;
+  }
 
+  .projects-list {
+    gap: 7rem;
+  }
+
+  .project-card__desc {
+    max-width: 100%;
+  }
+}
+
+/* ===== SMALL TABLET / LARGE MOBILE  (≤ 768px) ===== */
+@media (max-width: 48em) {
+  html {
+    font-size: 56.25%; /* 9px base */
+  }
+
+  :root {
+    --section-py: 8rem;
+  }
+
+  .container {
+    padding: 0 2.8rem;
+  }
+
+  .hero-desc {
+    font-size: 1.7rem;
+  }
+
+  .hero-cta {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .hero-cta .btn {
+    width: 100%;
+    justify-content: center;
+    max-width: 32rem;
+  }
+
+  .section-header {
+    margin-bottom: 5rem;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2rem;
+  }
+
+  .contact-deco {
+    font-size: 22vw;
+  }
+}
+
+/* ===== MOBILE  (≤ 480px) ===== */
+@media (max-width: 30em) {
+  html {
+    font-size: 50%; /* 8px base */
+  }
+
+  :root {
+    --section-py: 7rem;
+  }
+
+  .container {
+    padding: 0 2rem;
+  }
+
+  .scroll-indicator {
     display: none;
   }
 
-  .nav-open .main-nav {
-    z-index: 9;
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  .hero-name {
+    letter-spacing: -0.025em;
+  }
 
-    opacity: 1;
-    pointer-events: auto;
-    visibility: visible;
-    transform: translateY(0);
+  .stats-grid {
+    grid-template-columns: 1fr 1fr;
   }
-  .nav-open .main-nav-list {
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-  }
-}
 
-@media (max-width: 34.375em) {
-  html {
-    font-size: 35%;
+  .contact-email {
+    font-size: 2rem;
+    word-break: break-all;
   }
-  .section-hero {
-    height: calc(70vh - 8rem);
-  }
-  .hero-text {
-    display: flex;
-    flex-direction: column;
+
+  .contact-socials {
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 1rem;
   }
-  .more-info {
-    gap: 8rem;
-    flex-direction: column;
-  }
-  .skills {
-    margin: 0 auto;
-    width: 80%;
-  }
 
-  .next-page {
-    display: none;
+  .footer-inner {
+    flex-direction: column;
+    gap: 1.2rem;
+    text-align: center;
   }
 }
